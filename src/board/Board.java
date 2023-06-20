@@ -9,7 +9,7 @@ public class Board {
     public List<Cell> cells;
     private Integer edgeSize;
     
-    public Board(Integer edgeSize, Integer numberSnakesLadders) {
+    public Board(Integer edgeSize, Integer numSnakesLadders) {
         this.cells = new ArrayList<>();
         this.edgeSize = edgeSize;
         
@@ -20,11 +20,18 @@ public class Board {
         }
         
         Random rand = new Random();
-        for(Integer i = 0; i < numberSnakesLadders; ) {
+        for(Integer i = 0; i < numSnakesLadders; ) {
             int from = rand.nextInt(maxCell) + 1;
             int to = rand.nextInt(maxCell) + 1;
             
+            
             if(from != to) {
+                
+                if(from < to)
+                    System.out.println("ladder> " + from + ":" + to);
+                else
+                    System.out.println("snake> " + from + ":" + to);
+                
                 Cell jumpFrom = cells.get(from-1);
                 Cell jumpTo = cells.get(to-1);
                 

@@ -19,7 +19,7 @@ public class Game {
     int maxCell;
     GameStatus status;
 
-    Game(int numPlayers, int boardSize, int numDice, int numSnakesLadders) {
+    public Game(int numPlayers, int boardSize, int numDice, int numSnakesLadders) {
         
         this.maxCell = boardSize*boardSize;
         this.board = new Board(boardSize, numSnakesLadders);
@@ -39,6 +39,7 @@ public class Game {
 
     public void takeTurn() {
         Player curPlayer = players.pollFirst();
+        System.out.println("" + curPlayer.id + " rolls..");
         // List<Integer> faces = new ArrayList<>();
 
         Integer inc = 0;
@@ -47,16 +48,25 @@ public class Game {
         }
 
         Integer toPos = curPlayer.getPos() + inc;
+        toPos = Math.min(maxCell, toPos);
         Cell toCell = board.getCell(toPos);
         
+        System.out.println("Moves to " + toPos);
+
         if(toCell.hasJump()) {
+            System.out.println("~~~> and / ;D");
             toCell = toCell.getJumpToCell();
+            toPos = toCell.getPos();
+            System.out.println("Moves to " + toPos);
         }
         
         curPlayer.setPos(Math.min(maxCell, toPos));
 
         if(curPlayer.getPos() != this.maxCell) {
             players.add(curPlayer);
+        }
+        else {
+            System.out.println("" + curPlayer.id + " has won!");
         }
 
         if(players.size() == 1) {

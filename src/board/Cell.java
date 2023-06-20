@@ -1,12 +1,11 @@
 package board;
 public class Cell {
     
-    Integer id;
-    
+    Integer pos;
     Cell jumpToCell;
     
     Cell(Integer id) {
-        this.id = id;
+        this.pos = id;
         this.jumpToCell = null;
     }
     
@@ -22,5 +21,8 @@ public class Cell {
         return jumpToCell;
     }
     
+    public Integer getPos() {
+        return this.pos;
+    }
 
 }

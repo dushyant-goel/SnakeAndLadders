@@ -1,7 +1,7 @@
 package player;
 
 public class Player {
-    Integer id;
+    public Integer id;
     Integer pos;
     
     public void setPos(Integer pos) {
