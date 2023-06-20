@@ -1,18 +1,22 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This is the game of snakes and ladders.
+Start the game and follow the input instructions.
+(No of player 1-6) : each takes turn till they reach the top.
+(Board size 6-15) : represents boards from 36 cells to 225.
+(No of dice 1-2)
 
-## Folder Structure
+That's it.
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+----
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+To Do:
+- Return player to home, if another players moves to it's  cell (_gitti katna_).
+- Make a `TurnManager` class that return a `Turn` object based on number of dice. 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    eg. 1 dice : (6 - double turn)
 
-## Dependency Management
+    eg. 2 dice : (same faces - double turn)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
