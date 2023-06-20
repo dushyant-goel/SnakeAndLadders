@@ -9,7 +9,7 @@ public class Dice {
         this.id = id;
     }
 
-    Integer roll() {
+    public Integer roll() {
         Random random = new Random();
         Integer face = random.nextInt(6) + 1;
         return face;

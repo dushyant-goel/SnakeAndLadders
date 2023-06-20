@@ -8,7 +8,6 @@ import java.util.Random;
 public class Board {
     public List<Cell> cells;
     private Integer edgeSize;
-
     
     public Board(Integer edgeSize, Integer numberSnakesLadders) {
         this.cells = new ArrayList<>();
@@ -38,5 +37,9 @@ public class Board {
     
     public Integer getEdgeSize() {
         return edgeSize;
+    }
+
+    public Cell getCell(int position) {
+        return cells.get(position-1);
     }
 }
