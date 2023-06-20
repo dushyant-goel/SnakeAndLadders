@@ -29,8 +29,7 @@ public class Board {
                 Cell jumpFrom = cells.get(from-1);
                 Cell jumpTo = cells.get(to-1);
                 
-                jumpFrom.setHasJump(true);
-                jumpFrom.setTo(jumpTo);
+               jumpFrom.setJumpToCell(jumpTo);
                 
                 i++;
             }
