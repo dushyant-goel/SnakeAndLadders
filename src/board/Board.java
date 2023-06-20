@@ -21,8 +21,8 @@ public class Board {
         
         Random rand = new Random();
         for(Integer i = 0; i < numSnakesLadders; ) {
-            int from = rand.nextInt(maxCell) + 1;
-            int to = rand.nextInt(maxCell) + 1;
+            int from = rand.nextInt(maxCell - 1) + 1;
+            int to = rand.nextInt(maxCell - 1) + 1;
             
             
             if(from != to) {
